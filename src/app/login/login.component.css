@@ -1,0 +1,146 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 50px;
+  width: 50vw;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #017cff;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: default;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px red solid;
+}
+textarea.ng-invalid.ng-touched {
+  border: 1px red solid;
+}
+
+.help-block {
+  color: red;
+  font-size: 0.8em;
+  text-align: left;
+  display: block; 
+  margin-top: 2px;
+}
+
+
+.inline {
+  display: inline-block;
+}
+
+
+.login-btn {
+    width: 20%; /* Adjust as needed */
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login-btn:disabled {
+    background-color: #aaa;
+    cursor: default;
+}
+
+.register-link {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.register-link a {
+    color: #017cff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.submit-button{
+    text-align: left;
+    display: block; 
+}
+
+
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+.alert-danger {
+  background-color: #f44336; /* Red */
+}
+.alert-success {
+  background-color: #36f456;  
+} 
+.alert{
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.alert mat-icon {
+  margin-right: 10px;
+}  
+
+.alert-close {
+  margin-left: auto;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+<mat-toolbar class="custom-toolbar">
+    <span class="app-name">reglog</span>
+    <span class="toolbar-spacer"></span>
+    <a routerLink="/" class="login-link">Home</a>
+    <a routerLink="/login" *ngIf="!isAuthenticated" class="login-link">Login</a>
+    <a routerLink="/register" *ngIf="!isAuthenticated" class="login-link">Register</a>
+    <a routerLink="/account" *ngIf="isAuthenticated" class="login-link">Account</a>
+  </mat-toolbar>
+  

@@ -1,0 +1,68 @@
+<div class="login-container">
+    <div class="login-box">
+        <div *ngIf="successMessage" class="alert alert-success mat-elevation-z4">
+            <mat-icon>check_circle</mat-icon>
+            {{ successMessage }}
+            <span class="alert-close" (click)="clearMessage()">×</span>
+      
+        </div>
+          <div *ngIf="errorMessage" class="alert alert-danger mat-elevation-z4">
+            <mat-icon>error</mat-icon>
+            {{ errorMessage }}
+            <span class="alert-close" (click)="clearMessage()">×</span>
+      
+        </div>
+        
+        <h2>Register</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <input type="text" formControlName="firstname" placeholder="First Name" />
+                    <span *ngIf="registerForm.get('firstname')?.invalid && registerForm.get('firstname')?.touched" class="help-block">
+                        First name is required
+                    </span>
+                </div>
+                <div class="form-group half-width">
+                    <input type="text" formControlName="lastname" placeholder="Last Name" />
+                    <span *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched" class="help-block">
+                        Last name is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="username" placeholder="Username" />
+                <span *ngIf="registerForm.get('username')?.errors?.required && registerForm.get('username')?.touched" class="help-block">
+                    Username is required
+                </span>
+                <span *ngIf="!registerForm.get('username')?.errors?.required &&registerForm.get('username')?.errors?.usernameInvalid && registerForm.get('username')?.touched" class="help-block">
+                    Username must be at least 3 characters and not include any special symbols or spaces.
+                </span>
+              </div>
+
+
+            <div class="form-group">
+                <input type="password" formControlName="password" placeholder="Password" />
+                <span *ngIf="registerForm.get('password')?.errors?.required && registerForm.get('password')?.touched" class="help-block">
+                  Password is required
+                </span>
+                <span *ngIf="!registerForm.get('password')?.errors?.required &&registerForm.get('password')?.errors?.passwordInvalid && registerForm.get('password')?.touched" class="help-block">
+                  Password must be at least 6 characters and include atleast 1 special symbol.
+                </span>
+              </div>
+              
+            <div class="form-group">
+                <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" />
+                <span *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="help-block">
+                    Confirm password is required
+                </span>
+                <span *ngIf="!registerForm.get('confirmPassword')?.invalid &&registerForm.errors?.passwordMismatch && registerForm.get('confirmPassword')?.touched" class="help-block">
+                    Passwords do not match
+                </span>
+            </div>
+            <div class="submit-button">
+                <button type="submit" [disabled]="!registerForm.valid" class="login-btn">Register</button>
+            </div>
+            <p class="register-link">Already have an account? <a href="/login">Login here.</a></p>
+        </form>
+    </div>
+</div>
